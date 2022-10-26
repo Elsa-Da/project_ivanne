@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import '../../utils/Sass/variables.scss';
+
+.header { 
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    background-color: $secondary;
+   display:flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   z-index: 2;
+   h1 {
+    font-size: 45px;
+    padding-right: 5%;
+    a {
+    color: $primary;
+    font-family:'Pacifico', serif;
+    font-weight: 400;}
+   }
+   &__pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 80px;
+    border: solid 3px $primary;
+    position: relative;
+    top: 50px;
+left: 30px;   }
+}

@@ -1,0 +1,19 @@
+@import '../../utils/Sass/variables.scss';
+
+.error {
+  text-align: center;
+  color: $secondary;
+  font-size: 36px;
+   padding-top: 250px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 288px;
+    margin: 0;
+  }
+  &__link {
+    font-size: 18px;
+    color: $secondaryDark;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../utils/Sass/variables.scss';
+
+.tag {
+  background: $secondary;
+  border-radius: 20px;
+  color: white;
+  font-size: 17px;
+  height: 30px;
+  padding: 0 15px 0 15px;
+  line-height: 30px;
+  display: inline-block;
+  margin: 5px;
+}

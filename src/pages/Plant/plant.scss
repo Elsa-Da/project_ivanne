@@ -1,0 +1,57 @@
+@import "../../utils/Sass/variables.scss";
+
+.plant {
+    width: 100%;
+    max-width: 900px;
+    padding-top: 200px;
+    
+
+    &__container {
+        width: 80%;
+        margin:auto;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    &__link {
+        color: $tertiary;
+        font-size: 20px;
+    }
+    
+    &__banner{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 400px;
+        height: 400px;
+        border-radius: 40px;
+            object-fit: cover;
+            margin: 30px 50px 20px 50px;
+        }
+    }
+    &__body {
+        width: 100%;
+        max-width: 900px;
+        &--descri {
+            background-color: #F6F2E3;
+        }
+    }
+    &__head {
+        align-self: flex-start;
+        &--info {
+        display: flex;
+        justify-items: flex-start;
+        align-items: center;
+        color: $tertiary;
+        margin-top: 15px;
+        h1 {
+            font-size: 45px;
+            margin: 0 10px 0 10px;
+        }
+    }
+    &--difficulty {
+margin: 10px 30px 0px 30px;
+    }
+}}
