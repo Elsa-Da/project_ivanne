@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/project_ivanne/static/css/main.81e421a7.css",
+    "main.js": "/project_ivanne/static/js/main.79874dc7.js",
+    "static/media/profil_pic.png": "/project_ivanne/static/media/profil_pic.451b67d67e0ff4dc37c0.png",
+    "static/media/leafOff.png": "/project_ivanne/static/media/leafOff.2f747d5af103d32676a3.png",
+    "static/media/leafOn.png": "/project_ivanne/static/media/leafOn.216cc7ab86efe132e20e.png",
+    "static/media/searchIco.png": "/project_ivanne/static/media/searchIco.b9553ac1eef9d0a3085f.png",
+    "index.html": "/project_ivanne/index.html",
+    "main.81e421a7.css.map": "/project_ivanne/static/css/main.81e421a7.css.map",
+    "main.79874dc7.js.map": "/project_ivanne/static/js/main.79874dc7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81e421a7.css",
+    "static/js/main.79874dc7.js"
+  ]
+}
