@@ -1,7 +1,7 @@
 import './plantCard.scss';
 import Difficulty from '../Difficulty';
 
-function PlantCard({ plant}) {
+function PlantCard({ plant }) {
    
   return (
     <ul>

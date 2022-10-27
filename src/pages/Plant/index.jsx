@@ -12,8 +12,6 @@ function Plant() {
     return <Navigate replace to="/error" />;
   }
 
-    let tags = selectedPlant.tags;
-
   return (
     <div className="plant__container">
     <div className="plant">
@@ -30,9 +28,9 @@ function Plant() {
         <div className="plant__head--info">
           <h1>{selectedPlant.name}</h1>
           <p className="plant__head--difficulty"><Difficulty value={selectedPlant.difficulty} /></p>
-          {tags.map((tag, index) => (
-            <Tag key={`tag_${index}`}>{tag}</Tag>
-          ))}
+          
+            <Tag>{selectedPlant.tags}</Tag>
+          
           </div>
           <h2>( {selectedPlant.sciName} ) - {selectedPlant.origin}</h2>
       </div>

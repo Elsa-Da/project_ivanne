@@ -8,6 +8,7 @@ function Home() {
   const [plants, setPlants] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
+ 
   useEffect(() => {
     setPlants(data)
     setSearchResults(data)
@@ -16,6 +17,7 @@ function Home() {
 
   return (<div>
     <div className="homePage">
+      
       <SearchBar plants={plants} setSearchResults={setSearchResults} />
       <ListPage searchResults={searchResults} />
     </div></div>

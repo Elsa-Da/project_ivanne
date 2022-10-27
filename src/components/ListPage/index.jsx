@@ -6,14 +6,15 @@ const ListPage = ({ searchResults }) => {
 
     const results = searchResults.map(plant =>  <div key={plant.id}>
           <Link to={`/plant/${plant.id}`}>
-                   <PlantCard picture={plant.picture} name={plant.name} id={plant.id} difficulty={plant.difficulty} plant={plant} className="plantList__card"/>
+            <PlantCard picture={plant.picture} name={plant.name} id={plant.id} difficulty={plant.difficulty} plant={plant} className="plantList__card"/>
           </Link>
         </div>)
 
     const content = results?.length ? results : <article><p>No Matching Posts</p></article>
 
     return (
-        <div className="plantList">{content}</div>
+        <div>
+            <div className="plantList">{content}</div></div>
     )
 }
 export default ListPage
