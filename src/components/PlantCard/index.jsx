@@ -1,17 +1,18 @@
 import './plantCard.scss';
 import Difficulty from '../Difficulty';
 
-function PlantCard({ id, name, picture, difficulty }) {
+function PlantCard({ plant}) {
    
   return (
     <ul>
       <li>
-        <img key={id}
-          src={picture}
-          alt={name}
+        <img key={plant.id}
+          src={plant.picture}
+          alt={plant.name}
+          plant={plant.plant}
         className="plantCard" />
-              <h2 className="plantCard__name">{name}</h2>
-              <p className="plantCard__difficulty"><Difficulty value={difficulty} /></p>
+              <h2 className="plantCard__name">{plant.name}</h2>
+              <p className="plantCard__difficulty"><Difficulty value={plant.difficulty} /></p>
       </li>
     </ul>
   );
