@@ -7,7 +7,8 @@ import AboutImg from './components/About/AboutImg';
 import AboutContent from './components/About/AboutContent';
 import Error from './pages/Error';
 import Plant from './pages/Plant';
-    
+import Login from './pages/Admin/Login';
+
 function App() {
   const [isMenuActive, activeMenu] = useState(false)
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/plant/:id" element={<Plant />} />
         <Route path="/error" element={<Error />} />
+        <Route path="/admin" element={<Login />} />
         <Route path="*" element={<Error />} />
         </Routes>
     </div>

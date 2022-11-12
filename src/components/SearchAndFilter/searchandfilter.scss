@@ -1,0 +1,70 @@
+@import '../../utils/Sass/variables.scss';
+
+
+.plantList {
+    
+    list-style-type: none;
+    padding-left:0;
+    display: flex;
+    justify-content: center;
+  
+}
+.plantCard {
+  width: 230px;
+  height: 230px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 40px;
+  object-fit: cover;
+  &__name {
+    color: $tertiary;
+    font-size: 26px;
+    margin: 0;
+    padding-left: 20px;
+  }
+  &__difficulty {
+    padding-left: 20px;
+    margin-top: -5px;
+  }
+
+}
+
+@import '../../utils/Sass/variables.scss';
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    &__input {
+        width: 260px;
+        height:30px;
+        border:none;
+        background-color: $secondaryLight;
+        position: absolute;
+        font-family: "kreon";
+        padding:  5px;
+       &:focus {
+            outline:  none;
+        }
+    }
+    &__button {
+        background: none;
+        border: none;
+        position: relative;
+        left: 115px;
+        top: 6px;
+        img {
+            width: 25px;
+        }
+    }
+    &__filter {
+        margin-left: 150px;
+        height:30px;
+         border:none;
+        background-color: $secondary;
+        font-family: "kreon";
+        color: $primary;
+        
+    }
+}
