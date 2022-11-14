@@ -6,7 +6,7 @@ import './aboutImg.scss'
 function AboutImg({ onMenuClick }) {
     return (
         <div><img src={ProfilPic}
-      onClick={onMenuClick} alt="Photo de présentation Ivanne" className="aboutImg"/>  <img src={arrowAbout} alt="fleche" className="aboutArrow" /></div>
+      onClick={onMenuClick} alt="Ivanne" className="aboutImg"/>  <img src={arrowAbout} alt="fleche" className="aboutArrow" /></div>
    
   )
 }
