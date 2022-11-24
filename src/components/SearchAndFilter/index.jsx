@@ -21,7 +21,7 @@ function SearchAndFilter() {
     const [filterParam, setFilterParam] = useState(["All"]);
 
         useEffect(() => {
-            fetch("http://localhost:3000/api/plant/")
+            fetch("http://localhost:8080/api/plants")
                 .then((res) => res.json())
                 .then(
                     (result) => {
