@@ -10,22 +10,28 @@ function Plant() {
   
   const [plants, setPlants] = useState([]);
 
-  useEffect(() => {
-fetchData()
-  }, [])
-
-  const fetchData = async () => {
-    try {
-      const { data } = await axios.get(`http://localhost:3000/api/plant/${id}`);
-      console.log(data);
-      setPlants([data]);
-      
-    } catch (error) {
-      console.log(error.response);
+    useEffect(() => {
+axios.get(`http://localhost:8080/api/plants/${id}`)
+  .then(function (response) {
+    console.log(response.data);
+    setPlants([response.data]);
+  })
+    .catch(function (error) {
+    if (error.response) { // get response with a status code not in range 2xx
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (error.request) { // no response
+      console.log(error.request);
+      // instance of XMLHttpRequest in the browser
+      // instance ofhttp.ClientRequest in node.js
+    } else { // Something wrong in setting up the request
+      console.log('Error', error.message);
     }
-  }
+    console.log(error.config);
+  });
+}, []);
 
- 
     return (
       <div className="plant__container">
         <div className="plant">

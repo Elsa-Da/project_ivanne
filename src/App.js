@@ -8,6 +8,7 @@ import AboutContent from './components/About/AboutContent';
 import Error from './pages/Error';
 import Plant from './pages/Plant';
 import Login from './pages/Admin/Login';
+import AddPlant from './pages/Admin/AddPlant/add_plant';
 
 function App() {
   const [isMenuActive, activeMenu] = useState(false)
@@ -22,6 +23,7 @@ function App() {
         <Route path="/plant/:id" element={<Plant />} />
         <Route path="/error" element={<Error />} />
         <Route path="/admin" element={<Login />} />
+        <Route path="/admin/add-plant" element={<AddPlant />} />
         <Route path="*" element={<Error />} />
         </Routes>
     </div>

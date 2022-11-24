@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import Difficulty from "../Difficulty/index";
 import './searchandfilter.scss';
@@ -20,30 +21,31 @@ function SearchAndFilter() {
     //     add a default value to be used by our select element
     const [filterParam, setFilterParam] = useState(["All"]);
 
-        useEffect(() => {
-            fetch("http://localhost:8080/api/plants")
-                .then((res) => res.json())
-                .then(
-                    (result) => {
-                        setIsLoaded(true);
-                        setItems(result);
-                        console.log(result)
-                    },
-                    // Note: it's important to handle errors here
-                    // instead of a catch() block so that we don't swallow
-                    // exceptions from actual bugs in components.
-                    (error) => {
-                        setIsLoaded(true);
-                        setError(error);
-                    }
-                );
-        }, []);
-    
-     /* here we create a function 
-//     we filter the items
-// use array property .some() to return an item even if other requirements didn't match
-    */
+    useEffect(() => {
+axios.get('http://localhost:8080/api/plants')
+  .then(function (response) {
+      console.log(response.data);
+      setIsLoaded(true);
+    setItems(response.data);
+  })
+    .catch(function (error) {
+    if (error.response) { // get response with a status code not in range 2xx
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (error.request) { // no response
+      console.log(error.request);
+      // instance of XMLHttpRequest in the browser
+      // instance ofhttp.ClientRequest in node.js
+    } else { // Something wrong in setting up the request
+      console.log('Error', error.message);
+    }
+    console.log(error.config);
+  });
+}, []);
+
     function search(items) {
+        console.log('item is' + items)
         return items.filter((item) => {
             if (item.category == filterParam) {
                 return searchParam.some((newItem) => {
@@ -115,9 +117,9 @@ function SearchAndFilter() {
                     </div>
 
                     <ul className="plantList">
-                        {search(items).map(({_id, name, picture, difficulty}) => (
-                            <li key={`plant_${_id}`}> <Link to={`/plant/${_id}`}>
-                   <img key={_id}
+                        {search(items).map(({id, name, picture, difficulty}) => (
+                            <li key={`plant_${id}`}> <Link to={`/plant/${id}`}>
+                   <img key={id}
           src={picture}
           alt={name}
         className="plantCard" />

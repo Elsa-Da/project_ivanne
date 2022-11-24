@@ -1,13 +1,22 @@
 const express = require("express");
 const cors = require("cors");
+const helmet = require('helmet');
 
 const app = express();
 
+var whitelist = ['http://localhost:8080', 'http://localhost:3000'];
 var corsOptions = {
-  origin: "http://localhost:8080"
-};
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 
 app.use(cors(corsOptions));
+app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
 
 // parse requests of content-type - application/json
 app.use(express.json());

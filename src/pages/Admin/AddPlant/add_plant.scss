@@ -1,0 +1,16 @@
+@import "../../../utils/Sass/variables.scss";
+
+
+.formPage {
+    
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    &__field{
+        padding: 20px;
+    }
+    & label {
+color:$secondaryDark;
+margin-right: 20px;
+    }}
